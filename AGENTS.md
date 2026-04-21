@@ -1,4 +1,6 @@
 <!-- SPECKIT START -->
-For additional context about technologies to be used, project structure,
-shell commands, and other important information, read the current plan
+Project: Sistema de Dificuldade para Minecraft
+Tech Stack: HTML5, CSS3, JavaScript (ES6+), sem frameworks
+Structure: src/index.html, src/styles/style.css, src/scripts/app.js
+Plan: specs/002-minecraft-challenge-system/plan.md
 <!-- SPECKIT END -->
