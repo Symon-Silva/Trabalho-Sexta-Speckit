@@ -16,7 +16,12 @@ const games = [
             "Derrote o Wither sem armadura de diamante",
             "Construa uma torre de 50 blocos de altura",
             "Colete 10 obras de arte para o museus",
-            "Crie um redstone que funcione"
+            "Crie um redstone que funcione",
+            "Derrotar uma Raid nível 5 sem morrer e sem usar poções",
+            "Zerar o jogo sem atacar",
+            "Achar uma maçã dourada encantada",
+            "Construir uma farm de ferro",
+            "Fazer um sistema de loop infinito com redstone"
         ]
     },
     {
@@ -33,10 +38,15 @@ const games = [
             "Complete o modo Carreira sem perder",
             "Vença um rival histórico",
             "Marque um gol de meio de campo",
-            "Ganhe usando only reservas"
+            "Ganhe usando only reservas",
+            "Virar um jogo com desvantagem de 3 gols",
+            "Vencer com 2 jogadores expulsos",
+            "Marcar 10.000 pontos em jogo de habilidade de finalização",
+            "Ganhar com o CR7 no gol",
+            "Vencer sem chutar (apenas conduzindo a bola até o gol)"
         ]
     },
-    {
+{
         id: "gta",
         name: "GTA San Andreas",
         icon: "🚗",
@@ -50,7 +60,12 @@ const games = [
             "Vença todas as missões de gangue",
             "Chegue ao rank máximo de任一個 gangue",
             "Complete o jogo em dificuldade máxima",
-            "Colete todas as items colecionáveis"
+            "Colete todas as items colecionáveis",
+            "Atravessar o mapa inteiro sem morrer",
+            "Sobreviver por 10 minutos com 6 estrelas",
+            "Pegar a Minigun no início do jogo",
+            "Vencer uma corrida",
+            "Chegar no norte do mapa"
         ]
     },
     {
@@ -67,7 +82,12 @@ const games = [
             "Complete a cutscene do Salazar",
             "Encontre 3 attache cases",
             "Derrote o Mendez sem morrer",
-            "Complete no difficulty máxima"
+            "Complete no difficulty máxima",
+            "Zerar só com pistolas",
+            "Zerar em menos de 3 horas",
+            "Derrotar o Garrador só com granadas",
+            "Matar o Verdugo usando apenas faca",
+            "Passar do Capítulo 1 sem tomar dano"
         ]
     }
 ];
