@@ -5,50 +5,69 @@ const games = [
     {
         id: "minecraft",
         name: "Minecraft",
+        icon: "⛏️",
         challenges: [
-            "Construa uma casa sem usar madeira",
-            "Sobreviva 10 noites sem construir abrigo",
-            "Derrote o Ender Dragon sem equipamento de diamante",
+            "Construa uma casa usando apenas terra e pedra",
+            "Sobreviva 10 noites sem construir nenhum abrigo",
+            "Encontre e domesticar pelo menos 3 lobos",
             "Crie uma fazenda automática de trigo",
-            "Explore 3 biomas diferentes em um dia",
-            "Encontre e domesticar um lobo",
-            "Crie um sistema de trilho minecart funcional"
+            "Explore uma mina até encontrar diamantes",
+            "Faça uma tabela de encantamentos",
+            "Derrote o Wither sem armadura de diamante",
+            "Construa uma torre de 50 blocos de altura",
+            "Colete 10 obras de arte para o museus",
+            "Crie um redstone que funcione"
         ]
     },
     {
         id: "fifa",
         name: "FIFA",
+        icon: "⚽",
         challenges: [
             "Ganhe uma partida na dificuldade Lendário",
             "Faça um hat-trick com um time de bronze",
-            "Ganhe 5 partidas seguidas",
             "Marque 5 gols de falta em uma partida",
             "Vença sem fazer nenhuma substituição",
-            "Ganhe usando apenas jogadores de 3 estrelas"
+            "Ganhe 5 partidas seguidas",
+            "Faça um gol contra usando apenas o goleiro",
+            "Complete o modo Carreira sem perder",
+            "Vença um rival histórico",
+            "Marque um gol de meio de campo",
+            "Ganhe usando only reservas"
         ]
     },
     {
         id: "gta",
         name: "GTA San Andreas",
+        icon: "🚗",
         challenges: [
-            "Complete a missão final sem morrer",
-            "Explore todo o mapa a pé",
-            "Colete todos os oyster tokens",
-            "Faça 100% de conclusão do jogo",
-            "Complete todas as missões de gangue",
-            "Adquira todas as propriedades disponíveis"
+            "Complete todas as missões de Las Venturas",
+            "Colete todos os 50 oyster tokens",
+            "Faça 100% de conclusão do save",
+            "Explore todo o mapa sem usar veículos",
+            "Complete a missão Grove Street",
+            "Adquira todas as propriedades",
+            "Vença todas as missões de gangue",
+            "Chegue ao rank máximo de任一個 gangue",
+            "Complete o jogo em dificuldade máxima",
+            "Colete todas as items colecionáveis"
         ]
     },
     {
         id: "resident-evil",
-        name: "Resident Evil 4",
+        name: "RE4",
+        icon: "🧟",
         challenges: [
-            "Complete o jogo sem morrer",
-            "Obtenha a classificação S+ no Profissional",
-            "Acabe com todos os Ganados em uma sala",
-            "Colete todos os宝物 raros",
+            "Complete a Turno A sem mortes",
+            "Obtenha ranking S+ no Profissional",
+            "Acabe com 20 Ganados de uma vez",
+            "Colete todos os treasures",
             "Derrote o Krauser com apenas uma vida",
-            "Complete no难度 máxima"
+            "Vença sem usar First Aid Spray",
+            "Complete a cutscene do Salazar",
+            "Encontre 3 attache cases",
+            "Derrote o Mendez sem morrer",
+            "Complete no difficulty máxima"
         ]
     }
 ];
@@ -74,14 +93,17 @@ function renderGames() {
     gamesListEl.innerHTML = '';
     
     games.forEach(game => {
-        const gameItem = document.createElement('div');
-        gameItem.className = 'game-item';
-        gameItem.dataset.gameId = game.id;
-        gameItem.textContent = game.name;
+        const gameCard = document.createElement('div');
+        gameCard.className = 'game-card';
+        gameCard.dataset.gameId = game.id;
+        gameCard.innerHTML = `
+            <span class="game-icon">${game.icon}</span>
+            <span class="game-name">${game.name}</span>
+        `;
         
-        gameItem.addEventListener('click', () => selectGame(game.id));
+        gameCard.addEventListener('click', () => selectGame(game.id));
         
-        gamesListEl.appendChild(gameItem);
+        gamesListEl.appendChild(gameCard);
     });
 }
 
@@ -89,12 +111,12 @@ function renderGames() {
 // Função para selecionar jogo
 // ============================================================
 function selectGame(gameId) {
-    const allGames = document.querySelectorAll('.game-item');
-    allGames.forEach(item => item.classList.remove('selected'));
+    const allCards = document.querySelectorAll('.game-card');
+    allCards.forEach(card => card.classList.remove('selected'));
     
-    const selectedItem = document.querySelector(`[data-game-id="${gameId}"]`);
-    if (selectedItem) {
-        selectedItem.classList.add('selected');
+    const selectedCard = document.querySelector(`[data-game-id="${gameId}"]`);
+    if (selectedCard) {
+        selectedCard.classList.add('selected');
     }
     
     selectedGameId = gameId;
@@ -106,7 +128,7 @@ function selectGame(gameId) {
 // ============================================================
 function generateChallenge() {
     if (!selectedGameId) {
-        showError('Por favor, selecione um jogo primeiro!');
+        showError('Selecione um jogo primeiro!');
         return;
     }
     

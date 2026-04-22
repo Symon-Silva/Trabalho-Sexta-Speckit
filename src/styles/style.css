@@ -9,7 +9,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1a1a2e;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     color: #eaeaea;
     min-height: 100vh;
     display: flex;
@@ -22,12 +22,13 @@ body {
    Container Principal
    ============================================================ */
 .container {
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
-    background-color: #16213e;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    background-color: #0f1629;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(233, 69, 96, 0.2);
 }
 
 /* ============================================================
@@ -35,115 +36,106 @@ body {
    ============================================================ */
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 header h1 {
-    color: #e94560;
-    font-size: 1.8rem;
+    color: #fff;
+    font-size: 2.2rem;
     margin-bottom: 10px;
+    text-shadow: 0 2px 10px rgba(233, 69, 96, 0.3);
 }
 
 header p {
-    color: #a0a0a0;
-    font-size: 1rem;
+    color: #94a3b8;
+    font-size: 1.1rem;
 }
 
 /* ============================================================
    Seções
    ============================================================ */
-.difficulty-section,
-.mode-section,
+.games-section,
 .challenge-section {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 h2 {
-    color: #eaeaea;
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #e94560;
-    padding-bottom: 8px;
+    color: #e94560;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
 }
 
 /* ============================================================
-   Botões de Dificuldade
+   Grid de Jogos - Cards Visuais
    ============================================================ */
-.difficulty-buttons {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
-.btn-difficulty {
-    flex: 1;
-    min-width: 100px;
-    padding: 15px 20px;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
+.game-card {
+    background: linear-gradient(145deg, #1e3a5f 0%, #0f2744 100%);
+    border: 2px solid #1e3a5f;
+    border-radius: 16px;
+    padding: 25px 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background-color: #0f3460;
-    color: #eaeaea;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.btn-difficulty:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(145deg, rgba(233, 69, 96, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-.btn-difficulty.selected {
-    border-color: #fff;
-    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(233, 69, 96, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-.btn-difficulty[data-difficulty="easy"].selected {
-    background-color: #4ade80;
-    color: #1a1a2e;
+.game-card:hover::before {
+    opacity: 1;
 }
 
-.btn-difficulty[data-difficulty="medium"].selected {
-    background-color: #fbbf24;
-    color: #1a1a2e;
+.game-card.selected {
+    border-color: #e94560;
+    background: linear-gradient(145deg, #2a1a4f 0%, #1e3a5f 100%);
+    box-shadow: 0 0 30px rgba(233, 69, 96, 0.4);
 }
 
-.btn-difficulty[data-difficulty="hard"].selected {
-    background-color: #ef4444;
+.game-card.selected::before {
+    opacity: 1;
+}
+
+.game-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.game-name {
+    font-size: 1.1rem;
+    font-weight: 600;
     color: #fff;
 }
 
-/* ============================================================
-   Botões de Modo
-   ============================================================ */
-.mode-toggle {
-    display: flex;
-    gap: 10px;
-}
-
-.btn-mode {
-    flex: 1;
-    padding: 12px 15px;
-    border: 2px solid #0f3460;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-color: transparent;
-    color: #a0a0a0;
-}
-
-.btn-mode:hover {
-    border-color: #e94560;
-    color: #eaeaea;
-}
-
-.btn-mode.active {
-    background-color: #0f3460;
-    border-color: #e94560;
-    color: #eaeaea;
+.game-card:hover .game-name,
+.game-card.selected .game-name {
+    color: #e94560;
 }
 
 /* ============================================================
@@ -151,64 +143,76 @@ h2 {
    ============================================================ */
 .btn-generate {
     width: 100%;
-    padding: 15px;
-    background-color: #e94560;
+    padding: 20px 30px;
+    background: linear-gradient(145deg, #e94560 0%, #c73e54 100%);
     color: #fff;
     border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    border-radius: 14px;
+    font-size: 1.3rem;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
 }
 
 .btn-generate:hover {
-    background-color: #ff6b6b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(233, 69, 96, 0.5);
 }
 
 .btn-generate:active {
     transform: translateY(0);
 }
 
+.btn-icon {
+    font-size: 1.5rem;
+}
+
 /* ============================================================
    Display do Desafio
    ============================================================ */
 .challenge-display {
-    background-color: #0f3460;
-    padding: 25px;
-    border-radius: 8px;
+    background: linear-gradient(145deg, #1e3a5f 0%, #0f2744 100%);
+    padding: 35px 30px;
+    border-radius: 16px;
     text-align: center;
-    min-height: 80px;
+    min-height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid rgba(233, 69, 96, 0.2);
 }
 
 #challenge-text {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #a0a0a0;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    font-weight: 500;
 }
 
 #challenge-text.challenge-visible {
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(233, 69, 96, 0.2);
 }
 
 /* ============================================================
    Mensagens de Erro
    ============================================================ */
 .error-message {
-    background-color: rgba(233, 69, 96, 0.2);
-    color: #e94560;
-    padding: 12px;
-    border-radius: 8px;
+    background-color: rgba(233, 69, 96, 0.15);
+    color: #ff6b8a;
+    padding: 15px 20px;
+    border-radius: 12px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
     font-weight: 500;
+    border: 1px solid rgba(233, 69, 96, 0.3);
 }
 
 .error-message.hidden {
@@ -218,27 +222,25 @@ h2 {
 /* ============================================================
    Responsividade
    ============================================================ */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .container {
-        padding: 20px;
+        padding: 25px 20px;
     }
     
     header h1 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
     
-    .difficulty-buttons,
-    .mode-toggle {
-        flex-direction: column;
-    }
-    
-    .btn-difficulty,
-    .btn-mode {
-        text-align: center;
+    .games-grid {
+        grid-template-columns: 1fr;
     }
     
     .btn-generate {
-        padding: 12px;
-        font-size: 1rem;
+        padding: 18px 25px;
+        font-size: 1.1rem;
+    }
+    
+    #challenge-text {
+        font-size: 1.1rem;
     }
 }

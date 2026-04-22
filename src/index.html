@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador de Desafios de Jogos</title>
+    <title>Gerador de Desafios</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Gerador de Desafios</h1>
-            <p>Selecione um jogo e gere um desafio!</p>
+            <p>Escolha um jogo e veja qual desafio surge!</p>
         </header>
 
         <main>
             <section class="games-section">
                 <h2>Selecione um Jogo</h2>
-                <div id="games-list" class="games-list">
+                <div id="games-list" class="games-grid">
                     <!-- Games rendered by JavaScript -->
                 </div>
             </section>
 
             <section class="challenge-section">
-                <button id="generate-btn" class="btn-generate">Gerar Desafio</button>
+                <button id="generate-btn" class="btn-generate">
+                    <span class="btn-icon">🎲</span>
+                    Gerar Desafio
+                </button>
                 <div class="challenge-display">
-                    <p id="challenge-text">Selecione um jogo e clique em "Gerar Desafio"</p>
+                    <p id="challenge-text">Selecione um jogo acima e clique em "Gerar Desafio"</p>
                 </div>
                 <div id="error-message" class="error-message hidden"></div>
             </section>
