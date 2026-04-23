@@ -9,7 +9,7 @@ const games = [
         challenges: [
             "Construa uma casa usando apenas terra e pedra",
             "Sobreviva 10 noites sem construir nenhum abrigo",
-            "Encontre e domesticar pelo menos 3 lobos",
+            "Encontre e domestique pelo menos 3 lobos",
             "Crie uma fazenda automática de trigo",
             "Explore uma mina até encontrar diamantes",
             "Faça uma tabela de encantamentos",
