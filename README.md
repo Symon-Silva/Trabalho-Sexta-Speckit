@@ -42,6 +42,8 @@ cd src
 Digite no terminal que irá abrir no navegador:
 index.html
 
+ALTERNATIVA PARA ENTRAR ABRIR O SITE: 
+Abra o projeto no próprio explorador de arquivos, entre no src e clique em index, irá abrir no navegador. 
 
 
 🔮 Próximas Melhorias:
