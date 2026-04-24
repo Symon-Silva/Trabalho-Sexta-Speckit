@@ -7,6 +7,7 @@ Trabalhinho do Bosca usando OpenCode e Speckit para criar um sistema próprio, e
 O Gerador de Desafios é uma aplicação web desenvolvida com HTML, CSS e JavaScript que tem como objetivo criar desafios para jogos, nessa versão inicial, possui apenas alguns jogos que eu jogo.
 A ideia é simples: Desafios pré-definidos são selecionados aleatoriamente para o jogo escolhido, proporcionando uma experiência diferente a cada uso e me desafiando de diferentes maneiras.
 
+
 ⚡ Funcionalidades:
 
 🎲 Geração "aleatória" de desafios com base em uma lista pré-definida.
@@ -16,6 +17,7 @@ A ideia é simples: Desafios pré-definidos são selecionados aleatoriamente par
 🔄 Possibilidade de gerar novos desafios rapidamente.
 
 
+
 🛠️ Tecnologias Utilizadas:
 
 HTML.
@@ -23,6 +25,7 @@ HTML.
 CSS.
 
 JavaScript.
+
 
 
 🚀 Como Executar:
@@ -39,6 +42,8 @@ cd src
 Digite no terminal que irá abrir no navegador:
 index.html
 
+
+
 🔮 Próximas Melhorias:
 
 🎚️ Sistema de dificuldade (desafio fácil, médio ou difícil).
@@ -50,6 +55,7 @@ index.html
 🎨 Melhorias na interface e experiência do usuário.
 
 ✅ Sistema de conclusões de desafios.
+
 
 
 🤝 Contribuição.
