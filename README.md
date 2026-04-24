@@ -19,22 +19,19 @@ JavaScript
 
 🚀 Como Executar:
 Clone o repositório:
-git clone <link-do-repositorio>
+git clone -b gerador-de-desafios --single-branch https://github.com/Symon-Silva/Trabalho-Sexta-Speckit.git
 Acesse a pasta do projeto:
-cd gerador-de-desafios
-Abra o arquivo abaixo no navegador:
-/src/index.html
-📁 Estrutura do Projeto
-/src
-  ├── index.html
-  ├── style.css
-  └── script.js
-🔮 Próximas Melhorias
-🎚️ Sistema de dificuldade (fácil, médio, difícil)
-🎮 Campo para escolher o jogo dos desafios
-🤖 Integração com IA para geração dinâmica de desafios
-📚 Expansão da lista de desafios
-🎨 Melhorias na interface e experiência do usuário
-🤝 Contribuição
+cd Trabalho-Sexta-Speckit
+cd src
+Digite no terminal que irá abrir no navegador:
+index.html
 
+🔮 Próximas Melhorias
+🎚️ Sistema de dificuldade (desafio fácil, médio ou difícil).
+🎮 Campo para escolher o jogo dos desafios, podendo digitar qualquer jogo, sem ter apenas os 4 selecionados.
+🤖 Geração dinâmica de desafios(sem lista pré-definida).
+🎨 Melhorias na interface e experiência do usuário.
+✅ Sistema de conclusões de desafios.
+
+🤝 Contribuição.
 Sinta-se à vontade para contribuir com novas ideias, melhorias ou até novos desafios para o projeto.
